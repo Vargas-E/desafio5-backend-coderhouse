@@ -26,10 +26,11 @@ app.set("view engine", "handlebars");
 app.set("views", "src/views");
 
 // Routes
-
+// Se separo el router de vistas de products y de CRUD de products.
 app.use("/api/products", productsRouter);
 
 app.use("/api/carts", cartsRouter);
+
 
 app.use(
   "/api/products_views",

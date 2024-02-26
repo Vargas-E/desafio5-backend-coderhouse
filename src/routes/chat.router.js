@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
       });
     });
 
-    res.render("chat");
+    res.render("chat", {active: {chat: true }});
   } catch (err) {
     res.status(500).json({ error: "server error" });
   }

@@ -8,7 +8,7 @@ router.use(express.static("./src/public"));
 
 router.get("/", async (req, res) => {
   const products = await productManagerDb.getProductsLean();
-  res.render("products",  {products: products} );
+  res.render("products",  {products: products, active: {products: true }} );
 });
 
 // Se agrega al req desde app.js la variable httpServer. Se toma aca de manera
@@ -42,7 +42,7 @@ router.get("/realtimeproducts", async (req, res) => {
         io.sockets.emit("products", newProducts);
       });
     });
-    res.render("realtimeproducts");
+    res.render("realtimeproducts", {active: {rProducts: true }});
   } catch (err) {
     res.status(500).json({ error: "server error" });
   }

@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #009B72;
     font-family: "Lato", sans-serif;
@@ -33,6 +38,11 @@ h1 {
     margin: auto;
     justify-content: space-between;
     background-color: #1A3A3A;
+    max-height: 75vh;
+}
+
+.containerHome {
+    overflow-y: scroll;
 
 }
 
@@ -85,7 +95,6 @@ h1 {
 
 #productsContainer {
     width: 45%;
-    height: 80vh;
     overflow-y: scroll;
 }
 
@@ -97,7 +106,20 @@ h1 {
 .cardContainerHome {
     width: 100%;
     margin: auto;
+    overflow-y: scroll;
+    height: 70vh;
 }
+
+/* Track */
+.cardContainerHome::-webkit-scrollbar {
+    background-color: lightgreen;
+}
+
+/* Handle */
+.cardContainerHome::-webkit-scrollbar-thumb {
+    background-color: #0c1b1b;
+}
+
 
 
 
@@ -156,4 +178,30 @@ h1 {
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
+}
+
+.appbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #1A3A3A;
+    padding: 2rem 1rem;
+}
+
+.menuButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.navButton {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    text-decoration: none;
+}
+
+.active {
+    color: lightgreen;
+    pointer-events: none;
 }
